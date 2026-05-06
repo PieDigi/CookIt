@@ -1,0 +1,245 @@
+/* ==============================
+   COOKIT — style_profilo.css (FINAL FIX)
+   ============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --sage:  #AFC1AD;
+  --green: #4F7D4A;
+  --dark:  #2E4A2B;
+  --brown: #5A3A2E;
+  --cream: #F7F3EE;
+  --card:  #FFFFFF;
+  --red:   #A94442;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--sage);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(79,125,74,0.25), transparent 50%);
+  min-height: 100vh;
+  padding: 20px 16px 90px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+}
+
+.app-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--dark);
+}
+
+.app-name span {
+  color: var(--green);
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+.profile-card {
+  background: var(--card);
+  border-radius: 28px;
+  padding: 26px 18px;
+  box-shadow: 0 10px 30px rgba(46,74,43,0.12);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* ---- AVATAR ---- */
+.avatar-ring {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  padding: 4px;
+  background: conic-gradient(var(--green), var(--brown), var(--sage));
+  box-shadow: 0 10px 25px rgba(79,125,74,0.25);
+}
+
+.avatar-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+/* ---- NAME ---- */
+.profile-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 14px;
+}
+
+/* =========================
+   INFO BOX
+========================= */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cream);
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #eee;
+}
+
+.info-icon {
+  font-size: 1.2rem;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* =========================
+   MENU
+========================= */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card);
+  padding: 14px 16px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: 0.2s;
+  border: none;
+  width: 100%;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+  background: var(--cream);
+}
+
+/* ---- ICONS ---- */
+.menu-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.menu-icon.green {
+  background: rgba(79,125,74,0.15);
+  color: var(--green);
+}
+
+.menu-icon.brown {
+  background: rgba(90,58,46,0.12);
+  color: var(--brown);
+}
+
+.menu-icon.red {
+  background: rgba(169,68,66,0.12);
+  color: var(--red);
+}
+
+/* ---- ARROW ---- */
+.menu-arrow {
+  color: #bbb;
+  font-size: 1.4rem;
+}
+
+/* =========================
+   LOGOUT BUTTON FIX
+========================= */
+.menu-form {
+  width: 100%;
+}
+
+.menu-form button {
+  cursor: pointer;
+}
+
+/* =========================
+   BOTTOM BAR
+========================= */
+.barra {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  box-shadow: 0 -6px 25px rgba(0,0,0,0.08);
+}
+
+.terzoBarra {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.terzoBarra.active {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 20px 14px;
+  }
+
+  .app-name {
+    font-size: 1.4rem;
+  }
+}

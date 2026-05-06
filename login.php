@@ -1,6 +1,10 @@
 <?php
 	session_start();
 
+
+
+	$messaggio = "";
+	$tipoMessaggio = "";
     function controllaCredenziali($email, $password){
         require("pdoConnection.php");
 
@@ -34,7 +38,7 @@
     //logout
     $logoutEffettuato = false;
     if(isset($_POST["logout"])){
-        setcookie("login","",time()-365);
+        session_destroy();
         $logoutEffettuato = true;
     }
    
@@ -47,15 +51,14 @@
     else if(isset($_POST["invio"])){
 
         if(controllaCredenziali($_POST["email"], $_POST["password"])){
-            if(isset($_POST["resta"])){
-                setcookie("login",$_POST["email"], time() + (7*24*60*60));
-            }
             vai();
         }else{
             $messaggio = "Email o password non corrette.";
         	$tipoMessaggio = "error";
         }
     }
+    
+   
 ?>
 
 <html lang="it">
@@ -63,13 +66,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mobile Login | CookIt</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="css/style_login.css">
 </head>
 <body>
-
+	
     <div class="login-container" id="loginBox">
+        <div class="logo-wrapper">
+            <img src="fote/CookIt_logo.png" alt="Logo CookIt" class="logo">
+        </div>
         <h2>LOGIN</h2>
-        
         <form id="loginForm" action="" method="post">
             <div class="input-group">
                 <input type="email" id="email" name="email" placeholder="Email" required>
@@ -91,3 +96,4 @@
     </div>
 </body>
 </html>
+

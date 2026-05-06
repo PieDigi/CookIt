@@ -1,0 +1,190 @@
+/* ==============================
+   COOKIT — LOGIN UI (Clean App Style)
+   ============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --sage: #AFC1AD;
+  --green: #4F7D4A;
+  --dark: #2E4A2B;
+  --card: #FFFFFF;
+  --border: rgba(0,0,0,0.08);
+  --shadow: rgba(0,0,0,0.10);
+}
+
+/* =========================
+   BACKGROUND (soft app vibe)
+========================= */
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+
+  background: linear-gradient(135deg, #AFC1AD, #dfe9df);
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+.login-container {
+  width: 100%;
+  max-width: 360px;
+
+  background: white;
+  border-radius: 28px;
+
+  padding: 28px 22px;
+
+  box-shadow: 0 20px 50px var(--shadow);
+
+  text-align: center;
+
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.97) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo-wrapper {
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+/* =========================
+   TITOLI
+========================= */
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--dark);
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   INPUT
+========================= */
+.input-group {
+  margin-bottom: 12px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  background: #fafafa;
+
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+/* focus vero app style */
+input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(79,125,74,0.15);
+  background: white;
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: var(--green);
+  color: white;
+
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 20px rgba(79,125,74,0.25);
+
+  transition: 0.2s;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   REGISTER BUTTON
+========================= */
+.btn-register {
+  margin-top: 14px;
+  width: 100%;
+
+  padding: 12px;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  background: white;
+
+  font-size: 0.9rem;
+
+  cursor: pointer;
+
+  color: var(--dark);
+
+  transition: 0.2s;
+}
+
+.btn-register strong {
+  color: var(--green);
+}
+
+.btn-register:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MESSAGGIO ERRORI
+========================= */
+#error,
+.error {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #A94442;
+}
+
+.success {
+  color: var(--green);
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+@media (max-width: 420px) {
+  .login-container {
+    margin: 0 16px;
+    padding: 22px 18px;
+  }
+}

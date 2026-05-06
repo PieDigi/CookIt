@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
 
         require("pdoConnection.php"); // $pdo
 
-        /* í ½í´ CONTROLLO EMAIL ESISTENTE */
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CONTROLLO EMAIL ESISTENTE */
         $check = $pdo->prepare("SELECT id FROM utenti WHERE email = :email");
         $check->execute([
             ":email" => $email
@@ -56,8 +56,7 @@ if (isset($_POST["submit"])) {
                     setcookie("telefono", $telefono, time() + (86400 * 7), "/");
                 }
 
-                $_SESSION["email"] = $email;
-                header("Location: PROFILO.php");
+                header("Location: login.php");
                 exit();
 
             } else {
@@ -75,7 +74,7 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Registrati | CookIt</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style_login.css">
 </head>
 <body>
 
